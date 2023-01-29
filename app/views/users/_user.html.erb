@@ -1,32 +1,27 @@
 <table class="table table-user">
   <h2>User info</h2>
-  <thead>
-    <tr>
+  <tr>
      <% if user.profile_image.attached? %>
       <%= image_tag user.profile_image, size: "100x100" %>
      <% else %>
       <%= image_tag 'no_image.jpg', size: "100x100" %>
      <% end %>
     </tr>
-  </thead>
-  <tbody>
-    <tr>
+  <tr>
       <th>Name</th>
       <th><%= user.name %></th>
-    </tr>
-    <tr>
+  </tr>
+  <tr>
       <th>Introduction</th>
       <th><%= user.introduction %></th>
-    </tr>
-    <tr>
-      <th colspan="2">
-       <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-lg btn-block"  do %>
-        <i class="fas fa-user-cog"></i>
-       <% end %>
-      </th>
-    </tr>
-  </tbody>
-</table>
+  </tr>
+  </table>
+  <%= link_to edit_user_path(current_user), class:"btn btn-outline-secondary btn-block"  do %>
+    <i class="fas fa-user-cog"></i>
+  <% end %>
+  
+  
+
 
 
 
