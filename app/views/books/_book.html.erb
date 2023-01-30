@@ -1,28 +1,38 @@
 <style  type="text/css">
- .form-group {margin: 16px;
+ .form-group {margin-bottom: 16px;
+ }
+ 
+ h2 {margin-top: 16px;
+     margin-bottom: 8px;
+     white-space: nowrap;
  }
  
  .title {margin: 8px;
  }
  .body {margin: 8px;
  }
+ 
 </style>
 
+<h2>New book</h2>
 <%= form_for(book) do |f| %>
   <div class="form-group">
     <div class="title"><%= f.label :Title %></div>
-    <%= f.text_field :title, class: "col-xs-12" %>
+    <%= f.text_field :title, class: "form-control" %>
   </div>
 
   <div class="form-group">
   	<div class="body"><%= f.label :Opinion %></div>
-    <%= f.text_area :body, class: "col-xs-12" %>
+    <%= f.text_area :body, class: "form-control" %>
   </div>
 
-  <div class="actions row">
-    <%= f.submit class: "btn btn-success col-xs-12" %>
+  <div class="form-group">
+    <%= f.submit class: "btn  btn-success col-xs-12" %>
   </div>
 <% end %>
+
+
+
 
 
 

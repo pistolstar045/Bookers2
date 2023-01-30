@@ -1,46 +1,51 @@
 <style type="text/css">
-  .user-info 　　　　}
   
-  .name {margin-bottom: 16px;
+  .form-group {margin-bottom: 16px;
+    
   }
+  
   .user-name {margin-bottom: 8px;
   }
   
-  .image {margin-bottom: 16px;
-  }
   .user-edit-image {margin-bottom: 8px;
   }
   
-  .body {margin-bottom: 16px;
-  }
   .form-body {margin-bottom: 8px;
   }
   
-  
+  .upload {margin-bottom: 16px;
+    
+  }
 </style>
 
-<div class="user-info">
-<h2>User info</h2>
-<%= form_with model: @user do |f| %>
-<%= render 'books/error', model: @user %>
-  <div class="name">
-  <div class="user-name">Name</div>
-    <%= f.text_field :name %>
-  </div>
-  <div class="image">
-  <div class="user-edit-image">Image</div>
+<div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h2>User info</h2>
+    <%= form_with model: @user do |f| %>
+    <%= render 'books/error', model: @user %>
+     <div class="form-group">
+     <div class="user-name">Name</div>
+      <%= f.text_field :name, class: "form-control" %>
+     </div>
+     <div class="form-group">
+     <div class="user-edit-image">Image</div>
     <%= f.file_field :profile_image, accept: "image/*" %>
+     </div>
+     <div class="form-group">
+     <div class="form-body">Introduction</div>
+       <%= f.text_area :introduction, class: "form-control" %>
+     </div>
+     <div class="upload">
+       <%= f.submit " Update User", class:"btn btn-secondary" do %>
+       <% end %>
+     </div>
+      <% end %>
+    </div>
+   </div>
   </div>
-  <div class="body">
-  <div class="form-body">Introduction</div>
-    <%= f.text_area :introduction %>
-  </div>
-  <div class="upload">
-    <%= f.submit " Update User", class:"btn btn-secondary" do %>
-    <% end %>
-  </div>
-<% end %>
-</div>
+  
+
 
 
 
